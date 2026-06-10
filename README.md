@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Catálogo Interativo de Produtos
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![CSS Modules](https://img.shields.io/badge/CSS_Modules-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-First, run the development server:
+## 📌 Sobre o Projeto
+Este projeto é uma aplicação web desenvolvida como requisito avaliativo (P2) para a disciplina de **Programação Web I** do curso de Engenharia de Software (Centro Universitário Alfredo Nasser). 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O objetivo principal é demonstrar o domínio sobre o ecossistema do **Next.js** e **React**, aplicando conceitos fundamentais como componentização atômica, gerenciamento de estado, roteamento baseado em arquivos e estilização modular.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação consiste em um catálogo interativo de produtos que renderiza dados dinamicamente e permite a interação do usuário através de filtros de busca e sistema de curtidas.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎯 Requisitos Atendidos (Checklist de Avaliação)
 
-## Learn More
+- [x] **Setup Inicial:** Projeto criado utilizando o comando `create-next-app`.
+- [x] **Componentização Atômica:** Interface segmentada em mais de 5 componentes reutilizáveis (ex: `Header`, `Footer`, `ProductCard`, `SearchBar`, `LikeButton`).
+- [x] **Gerenciamento de Estado Dinâmico:** Implementação do React Hook `useState` para controle do filtro de busca em tempo real e interação de curtidas nos produtos (utilizando a diretiva `"use client"`).
+- [x] **Roteamento Baseado em Arquivos (File-based Routing):** Criação de 5 rotas distintas:
+  - `/` (Home)
+  - `/sobre` (Sobre)
+  - `/produtos` (Catálogo Geral)
+  - `/produtos/[id]` (Detalhes do Produto - **Rota Dinâmica**)
+  - `/carrinho` (Carrinho)
+- [x] **Estilização Eficiente:** Utilização rigorosa de **CSS Modules** (`.module.css`) para garantir o escopo local das classes e evitar conflitos.
+- [x] **Layout Responsivo:** Estrutura visual construída com CSS Grid e Flexbox, adaptando-se a diferentes tamanhos de tela.
+- [x] **Controle de Versão:** Versionamento ativo utilizando Git e hospedagem do código-fonte no GitHub.
+- [x] **Deploy:** Aplicação publicada e acessível publicamente (Link abaixo).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Como executar o projeto localmente
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Siga as instruções abaixo para rodar a aplicação em seu ambiente de desenvolvimento:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone este repositório:
+   ```bash
+   git clone [https://github.com/seu-usuario/catalogo-interativo.git](https://github.com/seu-usuario/catalogo-interativo.git)
