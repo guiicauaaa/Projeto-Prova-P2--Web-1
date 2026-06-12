@@ -7,6 +7,8 @@
 ## 📌 Sobre o Projeto
 Este projeto é uma aplicação web desenvolvida como requisito avaliativo (P2) para a disciplina de **Programação Web I** do curso de Engenharia de Software (Centro Universitário Alfredo Nasser). 
 
+Discentes: Giancarlo Pinheiro, Guilherme Cauã, Victor Rocha Sales
+
 O objetivo principal é demonstrar o domínio sobre o ecossistema do **Next.js** e **React**, aplicando conceitos fundamentais como componentização atômica, gerenciamento de estado, roteamento baseado em arquivos e estilização modular.
 
 A aplicação consiste em um catálogo interativo de produtos que renderiza dados dinamicamente e permite a interação do usuário através de filtros de busca e sistema de curtidas.
