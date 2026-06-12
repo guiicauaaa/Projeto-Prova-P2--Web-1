@@ -1,0 +1,17 @@
+.btn {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.curtido {
+  background-color: #ffe6e6;
+  border-color: red;
+  color: red;
+}
