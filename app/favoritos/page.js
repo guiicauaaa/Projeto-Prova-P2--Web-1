@@ -1,9 +1,7 @@
 "use client";
-import { useState } from 'react';
-import ProductCard from '../../components/ProductCard';
-import SearchBar from '../../components/SearchBar';
+import Link from 'next/link';
 import { useFavoritos } from '../../components/useFavoritos';
-import styles from './produtos.module.css';
+import styles from './favoritos.module.css';
 
 const produtos = [
   { id: 1, nome: 'Teclado Mecânico RGB', preco: 350.00, desc: 'Switches azuis e iluminação RGB customizável.', imagem: 'https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/k/7/k715b-pt8.jpg' },
@@ -14,30 +12,48 @@ const produtos = [
   { id: 6, nome: 'Webcam Full HD', preco: 299.00, desc: '1080p a 60fps com foco automático e anel de luz integrado.', imagem: 'https://images.tcdn.com.br/img/img_prod/1395207/webcam_full_hd_1080p_com_microfone_home_office_videoconferencias_cor_preto_premium_61_1_6375d2da62c1d0bcb19f9ab44bcaf2d3.jpg' },
 ];
 
-export default function Produtos() {
-  const [busca, setBusca] = useState('');
+export default function Favoritos() {
   const { favoritos, toggleFavorito } = useFavoritos();
 
-  const produtosFiltrados = produtos.filter((p) =>
-    p.nome.toLowerCase().includes(busca.toLowerCase())
-  );
+  const produtosFavoritos = produtos.filter((p) => favoritos.includes(p.id));
 
   return (
     <main className={styles.container}>
-      <h1 className={styles.titulo}>Produtos</h1>
-      <SearchBar busca={busca} setBusca={setBusca} />
+      <h1 className={styles.titulo}>Favoritos</h1>
 
-      {produtosFiltrados.length === 0 ? (
-        <p className={styles.semResultados}>Nenhum produto encontrado para "{busca}".</p>
+      {produtosFavoritos.length === 0 ? (
+        <div className={styles.vazio}>
+          <p>Nenhum produto favoritado ainda.</p>
+          <Link href="/produtos" className={styles.botao}>
+            Ver Produtos
+          </Link>
+        </div>
       ) : (
-        <div className={styles.grid}>
-          {produtosFiltrados.map((produto) => (
-            <ProductCard
-              key={produto.id}
-              produto={produto}
-              curtido={favoritos.includes(produto.id)}
-              onToggleFavorito={toggleFavorito}
-            />
+        <div className={styles.lista}>
+          {produtosFavoritos.map((produto) => (
+            <div key={produto.id} className={styles.item}>
+              <img
+                src={produto.imagem}
+                alt={produto.nome}
+                className={styles.imagem}
+              />
+              <div className={styles.info}>
+                <span className={styles.nome}>{produto.nome}</span>
+                <span className={styles.desc}>{produto.desc}</span>
+                <span className={styles.preco}>R$ {produto.preco.toFixed(2)}</span>
+              </div>
+              <div className={styles.acoes}>
+                <Link href={`/produtos/${produto.id}`} className={styles.botaoDetalhes}>
+                  Ver Detalhes
+                </Link>
+                <button
+                  className={styles.botaoRemover}
+                  onClick={() => toggleFavorito(produto.id)}
+                >
+                  Remover
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       )}

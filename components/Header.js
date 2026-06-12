@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Link href="/">Catálogo</Link>
+        <Link href="/">Catalogo</Link>
       </div>
 
       <button
@@ -26,6 +26,7 @@ export default function Header() {
         <Link href="/" onClick={() => setMenuAberto(false)}>Home</Link>
         <Link href="/sobre" onClick={() => setMenuAberto(false)}>Sobre</Link>
         <Link href="/produtos" onClick={() => setMenuAberto(false)}>Produtos</Link>
+        <Link href="/favoritos" onClick={() => setMenuAberto(false)}>Favoritos</Link>
         <Link href="/carrinho" onClick={() => setMenuAberto(false)}>Carrinho</Link>
       </nav>
     </header>
