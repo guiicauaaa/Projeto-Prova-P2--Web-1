@@ -1,45 +1,38 @@
 .container {
-  max-width: 700px;
+  max-width: 680px;
   margin: 0 auto;
   padding: 3rem 2rem;
 }
 
 .titulo {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #282c34;
-  border-bottom: 3px solid #0070f3;
-  padding-bottom: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .vazio {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
-  padding: 3rem 1rem;
+  padding: 2rem;
   background-color: white;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.icone {
-  font-size: 3rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
 }
 
 .vazio p {
   color: #666;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .botao {
-  margin-top: 0.5rem;
   background-color: #0070f3;
   color: white;
-  padding: 0.7rem 1.8rem;
-  border-radius: 6px;
+  padding: 0.6rem 1.5rem;
+  border-radius: 4px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   transition: background-color 0.2s;
 }
 

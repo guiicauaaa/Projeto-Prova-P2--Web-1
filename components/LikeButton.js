@@ -6,11 +6,11 @@ export default function LikeButton() {
   const [curtido, setCurtido] = useState(false);
 
   return (
-    <button 
-      className={`${styles.btn} ${curtido ? styles.curtido : ''}`} 
+    <button
+      className={`${styles.btn} ${curtido ? styles.curtido : ''}`}
       onClick={() => setCurtido(!curtido)}
     >
-      {curtido ? '❤️ Curtido' : '🤍 Curtir'}
+      {curtido ? 'Curtido' : 'Curtir'}
     </button>
   );
 }
