@@ -2,7 +2,7 @@ import Link from 'next/link';
 import LikeButton from './LikeButton';
 import styles from './ProductCard.module.css';
 
-export default function ProductCard({ produto }) {
+export default function ProductCard({ produto, curtido, onToggleFavorito }) {
   return (
     <div className={styles.card}>
       <div className={styles.imagemWrapper}>
@@ -19,7 +19,7 @@ export default function ProductCard({ produto }) {
         <Link href={`/produtos/${produto.id}`} className={styles.button}>
           Ver Detalhes
         </Link>
-        <LikeButton />
+        <LikeButton curtido={curtido} onToggle={() => onToggleFavorito(produto.id)} />
       </div>
     </div>
   );

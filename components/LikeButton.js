@@ -1,16 +1,13 @@
 "use client";
-import { useState } from 'react';
 import styles from './LikeButton.module.css';
 
-export default function LikeButton() {
-  const [curtido, setCurtido] = useState(false);
-
+export default function LikeButton({ curtido, onToggle }) {
   return (
     <button
       className={`${styles.btn} ${curtido ? styles.curtido : ''}`}
-      onClick={() => setCurtido(!curtido)}
+      onClick={onToggle}
     >
-      {curtido ? 'Curtido' : 'Curtir'}
+      {curtido ? '❤️ Curtido' : '🤍 Curtir'}
     </button>
   );
 }

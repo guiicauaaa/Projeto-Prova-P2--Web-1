@@ -15,10 +15,19 @@ const produtos = [
 
 export default function Produtos() {
   const [busca, setBusca] = useState('');
+  const [favoritos, setFavoritos] = useState([]);
+
+  function toggleFavorito(id) {
+    setFavoritos((prev) =>
+      prev.includes(id) ? prev.filter((f) => f !== id) : [...prev, id]
+    );
+  }
 
   const produtosFiltrados = produtos.filter((p) =>
     p.nome.toLowerCase().includes(busca.toLowerCase())
   );
+
+  const produtosFavoritos = produtos.filter((p) => favoritos.includes(p.id));
 
   return (
     <main className={styles.container}>
@@ -30,9 +39,37 @@ export default function Produtos() {
       ) : (
         <div className={styles.grid}>
           {produtosFiltrados.map((produto) => (
-            <ProductCard key={produto.id} produto={produto} />
+            <ProductCard
+              key={produto.id}
+              produto={produto}
+              curtido={favoritos.includes(produto.id)}
+              onToggleFavorito={toggleFavorito}
+            />
           ))}
         </div>
+      )}
+
+      {produtosFavoritos.length > 0 && (
+        <section className={styles.favoritos}>
+          <h2 className={styles.favoritosTitulo}>Favoritos</h2>
+          <div className={styles.favoritosLista}>
+            {produtosFavoritos.map((produto) => (
+              <div key={produto.id} className={styles.favoritoItem}>
+                <img src={produto.imagem} alt={produto.nome} className={styles.favoritoImagem} />
+                <div className={styles.favoritoInfo}>
+                  <span className={styles.favoritoNome}>{produto.nome}</span>
+                  <span className={styles.favoritoPreco}>R$ {produto.preco.toFixed(2)}</span>
+                </div>
+                <button
+                  className={styles.favoritoRemover}
+                  onClick={() => toggleFavorito(produto.id)}
+                >
+                  Remover
+                </button>
+              </div>
+            ))}
+          </div>
+        </section>
       )}
     </main>
   );

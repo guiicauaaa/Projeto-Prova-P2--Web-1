@@ -12,8 +12,8 @@
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
   align-self: flex-start;
-  max-width: 1200px;
   width: 100%;
+  max-width: 1200px;
 }
 
 .semResultados {
@@ -28,6 +28,81 @@
   gap: 1.5rem;
   width: 100%;
   max-width: 1200px;
+}
+
+/* Seção de favoritos */
+.favoritos {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 3rem;
+  border-top: 2px solid #e0e0e0;
+  padding-top: 2rem;
+}
+
+.favoritosTitulo {
+  font-size: 1.2rem;
+  color: #282c34;
+  margin-bottom: 1rem;
+}
+
+.favoritosLista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.favoritoItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+
+.favoritoImagem {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.favoritoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.favoritoNome {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #282c34;
+}
+
+.favoritoPreco {
+  font-size: 0.88rem;
+  color: #555;
+}
+
+.favoritoRemover {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.82rem;
+  color: #666;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.favoritoRemover:hover {
+  border-color: #999;
+  color: #333;
 }
 
 @media (max-width: 600px) {
