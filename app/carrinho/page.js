@@ -1,8 +1,21 @@
+import Link from 'next/link';
+import styles from './carrinho.module.css';
+
+export const metadata = {
+  title: 'Carrinho | Catálogo Interativo',
+};
+
 export default function Carrinho() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h2>Seu Carrinho</h2>
-      <p>O carrinho está vazio no momento.</p>
-    </div>
+    <main className={styles.container}>
+      <h1 className={styles.titulo}>Carrinho</h1>
+      <div className={styles.vazio}>
+        <span className={styles.icone}>🛒</span>
+        <p>Seu carrinho está vazio.</p>
+        <Link href="/produtos" className={styles.botao}>
+          Explorar Produtos
+        </Link>
+      </div>
+    </main>
   );
 }

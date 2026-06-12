@@ -2,14 +2,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   background-color: #282c34;
   color: white;
+  position: relative;
+  z-index: 100;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.logo a {
+  color: white;
 }
 
 .nav {
@@ -18,9 +25,82 @@
 }
 
 .nav a {
-  transition: color 0.3s;
+  color: white;
+  font-size: 0.95rem;
+  padding: 0.4rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
 }
 
 .nav a:hover {
   color: #61dafb;
+  border-bottom-color: #61dafb;
+}
+
+/* Botão hambúrguer - escondido no desktop */
+.hamburguer {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.barra,
+.barraAtiva1,
+.barraAtiva2,
+.barraAtiva3 {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.barraAtiva1 {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.barraAtiva2 {
+  opacity: 0;
+}
+
+.barraAtiva3 {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 640px) {
+  .hamburguer {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #282c34;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid #3a3f4a;
+  }
+
+  .navAberto {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #3a3f4a;
+    border-left: none;
+  }
+
+  .nav a:hover {
+    background-color: #3a3f4a;
+    border-bottom-color: #3a3f4a;
+  }
 }

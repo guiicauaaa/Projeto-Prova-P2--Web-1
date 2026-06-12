@@ -1,14 +1,21 @@
 .input {
   width: 100%;
   max-width: 500px;
-  padding: 0.8rem 1rem;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
-  border: 2px solid #ccc;
+  border: 2px solid #ddd;
   border-radius: 8px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   outline: none;
+  transition: border-color 0.2s;
 }
 
 .input:focus {
   border-color: #0070f3;
+}
+
+@media (max-width: 600px) {
+  .input {
+    max-width: 100%;
+  }
 }
